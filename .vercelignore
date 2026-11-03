@@ -1,0 +1,7 @@
+# Vercel hosts EktaVerse as a static site: the game reads data/content.json directly
+# and Ask Ekta uses its written answers. The Python server and the admin editor
+# only work with server.py, so they stay out of the deployment.
+server.py
+chat.py
+admin.html
+js/admin.js

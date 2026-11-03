@@ -81,7 +81,8 @@ Typed questions then go to [`chat.py`](chat.py), and the written answers stay as
 
 ## Deploy
 
-- **Static hosting (GitHub Pages, Netlify, Vercel):** publish the folder as it is. The game reads `data/content.json` directly. The admin page can't save on a static host, so edit the JSON and commit it instead.
+- **Vercel (the live site):** import this repo at [vercel.com/new](https://vercel.com/new) and keep the defaults. `vercel.json` serves it as a static site with no build step, and `.vercelignore` leaves out the Python server and the admin page. Every push to `main` redeploys it. To change the content, edit `data/content.json` and push.
+- **Other static hosts (GitHub Pages, Netlify):** publish the folder as it is. The game reads `data/content.json` directly. The admin page can't save on a static host, so edit the JSON and commit it instead.
 - **With live editing (Render, Railway, Fly.io, any VPS):** run `server.py` with `HOST=0.0.0.0`, `PORT` and `ADMIN_PASSWORD` set. Use a host with a persistent disk, because saves are written to `data/content.json`.
 
 ## Project structure
