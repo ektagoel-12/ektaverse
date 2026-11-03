@@ -1,5 +1,4 @@
-# EktaVerse
-
+# EktaVerse  [Have a look](https://ektaverse.vercel.app/)
 **A portfolio you can play.** EktaVerse is Ekta Goel's portfolio as a 16-bit pixel-art platformer. Ekta graduates, throws her cap, and drives through her career one level at a time. Along the way she picks up experience, fixes bugs and tells her story in her own words. It was built for the Wispr Flow India Growth Team challenge.
 
 ![EktaVerse home page](docs/home.jpg)
