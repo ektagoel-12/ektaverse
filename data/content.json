@@ -1,0 +1,502 @@
+{
+  "profile": {
+    "name": "Ekta Goel",
+    "oneLiner": "Software engineer. Builder. Poet. Stuck at Silk Board, still shipping.",
+    "email": "ektagoel12july@gmail.com",
+    "resume": "resume/EktaGoel_resume.pdf",
+    "linkedin": "https://www.linkedin.com/in/ektagoel12/",
+    "github": "https://github.com/ektagoel-12",
+    "leetcode": "https://leetcode.com/ektagoel12/",
+    "geeksforgeeks": "https://auth.geeksforgeeks.org/user/ektagoel12july",
+    "medium": "https://medium.com/@ektagoel12july",
+    "poetryPage": "",
+    "instagram": "",
+    "videosPage": "",
+    "siteUrl": ""
+  },
+  "levels": [
+    {
+      "name": "Intel Campus",
+      "tagline": "Where I learned to automate the boring stuff",
+      "experience": "Automation + MLOps",
+      "gate": "INTEL"
+    },
+    {
+      "name": "Zeta Tech Park",
+      "tagline": "Shipping to 20 million people",
+      "experience": "Shipping to 20M users",
+      "gate": "ZETA"
+    },
+    {
+      "name": "Creative Lane",
+      "tagline": "The side of me that doesn't need a job title",
+      "experience": "Creativity: poetry + videos",
+      "gate": "STUDIO"
+    },
+    {
+      "name": "Rush Hour",
+      "tagline": "The last stretch",
+      "experience": "Open source + Kaggle"
+    }
+  ],
+  "dialogs": {
+    "01": {
+      "title": "Hi, I'm Ekta",
+      "portrait": "smile",
+      "audio": "audio/01-intro.mp3",
+      "text": "Hi, I'm Ekta. I'm a software engineer in Bengaluru, which means I spend half my life building things and the other half stuck at Silk Board. You're about to ride through my story. Use the arrow keys and Space — or the buttons on screen. Let's go."
+    },
+    "02": {
+      "title": "Intel Junction",
+      "portrait": "think",
+      "audio": "audio/02-intel.mp3",
+      "text": "My first big stop was Intel. I was an intern doing data engineering and MLOps, and I kept noticing the same thing: smart people doing boring, repetitive work. So I automated it. A deployment pipeline that made ML releases 30% faster. A validation tool that cut manual checking by 70% across a million records."
+    },
+    "03": {
+      "title": "Zeta Flyover",
+      "portrait": "smile",
+      "audio": "audio/03-zeta.mp3",
+      "text": "Now I'm at Zeta, building for PayZapp — HDFC Bank's app with over 20 million users. I work on security, loans, and the small details people never notice until they break. When 20 million people use what you ship, 'it works on my machine' stops being a joke. One thing I owned: the mobile-data-only authentication checks across PayZapp's signup and login flows."
+    },
+    "04": {
+      "title": "Things I Build",
+      "portrait": "laugh",
+      "audio": "audio/04-builds.mp3",
+      "text": "Outside work, I build things nobody asked me to. An AI tool that writes personalised cold emails from a resume and a job description. A model that puts punctuation into speech transcripts — 95.4% accurate. Yes, Wispr. I was working on your problem before I knew your name."
+    },
+    "05": {
+      "title": "The Studio",
+      "portrait": "smile",
+      "audio": "audio/05-studio.mp3",
+      "text": "This is the part of me that doesn't need a job title. I write poetry. I record videos. Code is how I solve problems; art is how I understand them."
+    },
+    "07": {
+      "title": "A mistake I learned from",
+      "portrait": "think",
+      "audio": "audio/07-mistake.mp3",
+      "text": "Okay, you fell. So have I. Every bug I've hit at work has taught me something — the hurdle cards on this road are a few of them. Dust off, step back, and try again."
+    },
+    "08": {
+      "title": "Why Wispr",
+      "portrait": "laugh",
+      "audio": "audio/08-wispr.mp3",
+      "text": "You made it through Silk Board — honestly, that's the hardest part of living here. I've already worked on the problem Wispr solves: putting punctuation into speech transcripts, at 95.4% accuracy. I'd love to keep building on it with you. Let's talk."
+    }
+  },
+  "sfx": {
+    "honk": "audio/sfx-honk.mp3",
+    "chalo": "audio/sfx-chalo.mp3",
+    "arreBhai": "audio/sfx-arre-bhai.mp3",
+    "silkboard": "audio/sfx-silkboard.mp3"
+  },
+  "comma": {
+    "text": "Fun fact: I built a model that puts punctuation into speech transcripts — 95.4% accurate. Sound familiar, Wispr?"
+  },
+  "lessons": [
+    {
+      "problem": "Critical data-ingestion workflows at Intel still ran on basic authentication.",
+      "audio": "audio/hurdle-1.mp3",
+      "solved": "I migrated them to OAuth 2.0, improving security and compliance readiness."
+    },
+    {
+      "problem": "Validating 1M+ records by hand was eating everyone's time.",
+      "audio": "audio/hurdle-2.mp3",
+      "solved": "I built an automated data quality framework with Python, Snowflake and SSAS that cut manual effort by 70%."
+    },
+    {
+      "problem": "ML releases were slow to ship.",
+      "audio": "audio/hurdle-3.mp3",
+      "solved": "I built a no-code MLOps pipeline with GitHub Actions, Databricks and MLflow that made releases 30% faster."
+    },
+    {
+      "problem": "Malformed referral URLs were being saved, which broke referral attribution.",
+      "audio": "audio/hurdle-4.mp3",
+      "solved": "I analysed the AppsFlyer OneLink templates, validated the URLs, extracted the referral codes and stopped bad ones from being stored."
+    },
+    {
+      "problem": "Static assets had to move from ImageBucket to Tachyon without breaking any environment.",
+      "audio": "audio/hurdle-5.mp3",
+      "solved": "I rolled it out step by step behind Firebase Remote Config feature flags."
+    },
+    {
+      "problem": "One Help Icon had to behave the same across 15+ Android and Flutter screens and every device configuration.",
+      "audio": "audio/hurdle-6.mp3",
+      "solved": "I integrated it from the Figma specifications and checked it across device configurations and combined builds."
+    }
+  ],
+  "projects": [
+    {
+      "icon": "mic",
+      "title": "Audio-to-Text Punctuation Prediction",
+      "desc": "Whisper ASR + a fine-tuned NVIDIA BERT model for punctuation restoration — 95.4% accuracy on 200+ hours of educational content",
+      "tags": [
+        "Python",
+        "SparkNLP",
+        "PyTorch"
+      ],
+      "link": "https://github.com/ektagoel-12/Python-Projects/tree/main/Audio_to_test_punctuation_prediction"
+    },
+    {
+      "icon": "mail",
+      "title": "Cold Outreach GenAI Tool",
+      "desc": "Parses resumes, scrapes GitHub and portfolio content into ChromaDB, and writes personalised cold emails from real-time job descriptions",
+      "tags": [
+        "LangChain",
+        "LLaMA 4",
+        "ChromaDB",
+        "Streamlit"
+      ],
+      "link": "https://github.com/ektagoel-12/AgenticAI/tree/main/job_tool"
+    },
+    {
+      "icon": "lock",
+      "title": "PayZapp Mobile Security",
+      "desc": "Real-time network state listeners, reusable Android utilities and mobile-data-only auth checks across signup & login — for 20M+ users",
+      "tags": [
+        "Android",
+        "Fintech"
+      ],
+      "link": ""
+    },
+    {
+      "icon": "bank",
+      "title": "Loan Application Management",
+      "desc": "End-to-end loan application system with JWT auth and REST APIs — 92% test coverage",
+      "tags": [
+        "Vue.js",
+        "Spring Boot",
+        "PostgreSQL",
+        "JUnit",
+        "Mockito",
+        "Vitest"
+      ],
+      "link": ""
+    },
+    {
+      "icon": "bank",
+      "title": "Microloan Distribution & Recovery",
+      "desc": "Microservices platform with 20+ REST APIs: onboarding, disbursement, repayment tracking and delinquency handling",
+      "tags": [
+        "Microservices",
+        "REST APIs"
+      ],
+      "link": ""
+    },
+    {
+      "icon": "rocket",
+      "title": "Intel No-Code MLOps Pipeline",
+      "desc": "Enterprise no-code ML deployment pipeline — +30% ML release velocity, recognised at Intel",
+      "tags": [
+        "GitHub Actions",
+        "Databricks CLI",
+        "MLflow",
+        "Streamlit"
+      ],
+      "link": ""
+    },
+    {
+      "icon": "check",
+      "title": "Data Quality Framework",
+      "desc": "Automated validation of 1M+ records — 70% less manual effort",
+      "tags": [
+        "Python",
+        "Snowflake",
+        "SSAS"
+      ],
+      "link": ""
+    },
+    {
+      "icon": "trophy",
+      "title": "Kaggle: Car Price Prediction",
+      "desc": "Ranked 46 out of 5000+ participants",
+      "tags": [
+        "Machine Learning"
+      ],
+      "link": "https://kaggle.com/competitions/autoam-car-price-prediction"
+    },
+    {
+      "icon": "code",
+      "title": "LibreOffice Open Source",
+      "desc": "5 Gerrit changes with a 20% performance improvement",
+      "tags": [
+        "Open source",
+        "Gerrit"
+      ],
+      "link": "https://gerrit.libreoffice.org/q/ekta"
+    }
+  ],
+  "gallery": {
+    "poem": {
+      "title": "",
+      "text": ""
+    },
+    "videos": []
+  },
+  "share": {
+    "template": "I fixed {bugs} bugs and drank {chai} chai escaping Silk Board with Ekta 🛵 {url}"
+  },
+  "intro": {
+    "college": "Jaypee Institute of Information Technology, Noida",
+    "collegeSign": "JIIT NOIDA",
+    "degree": "Integrated B.Tech + M.Tech in Computer Science and Engineering",
+    "years": "2020 – 2025"
+  },
+  "chat": {
+    "greeting": "Hi, I'm Ekta 👋 Pick a topic below or type a question — I've written answers to the things people usually ask.",
+    "suggestions": [
+      "About you",
+      "Work at Zeta",
+      "Intel internship",
+      "Projects",
+      "Skills",
+      "Contact me"
+    ],
+    "persona": "Software engineer in Bengaluru who builds things and loves automating the boring parts. Warm, curious and straightforward; a little funny about Bengaluru traffic (Silk Board) and chai. Also writes poetry: \"Code is how I solve problems; art is how I understand them.\" Speaks simple, friendly English.",
+    "facts": "Current role: Software Development Engineer (Backend / Full Stack) at Directi (Zeta), Bengaluru, since Aug 2025.\n- Improved mobile security for PayZapp (a fintech app with 20M+ users): real-time network state listeners, reusable Android utilities, and mobile-data-only authentication checks across signup and login.\n- Built an end-to-end Loan Application Management system (Vue.js, Spring Boot, PostgreSQL, JWT, REST APIs, JUnit, Mockito, Vitest) with 92% test coverage.\n- Designed a microservices-based Microloan Distribution and Recovery platform with 20+ REST APIs (onboarding, disbursement, repayment tracking, delinquency handling).\n- Integrated a Help Icon UI across 15+ Android and Flutter screens from Figma specs.\n- Improved referral attribution reliability by analysing AppsFlyer OneLink templates, validating referral URLs and preventing malformed URL persistence.\n- Migrated static asset configuration from ImageBucket to Tachyon domains using Firebase Remote Config feature flags.\nPrevious: Data Engineering and MLOps Intern at Intel Corporation, Bengaluru, Jul 2024 – May 2025.\n- Built an enterprise no-code MLOps deployment pipeline (GitHub Actions, Databricks CLI, MLflow, Streamlit) that improved ML release velocity by 30%; recognised at Intel for it.\n- Built an automated data quality validation framework (Python, Snowflake Connector, SSAS) validating 1M+ records and cutting manual validation effort by 70%.\n- Implemented ETL ingestion pipelines from 5+ sources (Azure Data Factory, Azure DevOps, Snowflake, SQL, REST APIs).\n- Migrated critical ingestion workflows from basic authentication to OAuth 2.0.\nEducation: Integrated M.Tech in Computer Science and Engineering, Jaypee Institute of Information Technology, Noida, Aug 2020 – Jun 2025.\nSide projects: Cold Outreach GenAI Tool (LangChain, LLaMA 4, ChromaDB, Streamlit), Jul 2025; Audio-to-Text Punctuation Prediction (Whisper ASR + fine-tuned NVIDIA BERT, 95.4% accuracy on 200+ hours of educational content), May 2024.\nSkills: Python, Java, C++, C, JavaScript, Kotlin; Spring Boot, Vue.js, PyTorch, Scikit-learn, SparkNLP, LangChain, ChromaDB, Streamlit, MLflow, Flask; Databricks, Azure Data Factory, Snowflake, SQL, MongoDB, PostgreSQL; Git, Docker, Postman, CI/CD; Android SDK.\nAchievements: Kaggle Car Price Prediction — rank 46 of 5000+ participants. LibreOffice open-source contributor — 5 Gerrit changes with a 20% performance improvement.",
+    "mode": "scripted",
+    "fallback": "That one deserves a proper answer from me directly! Email me at {email} or message me on LinkedIn: {linkedin}",
+    "answers": [
+      {
+        "topic": "Hello",
+        "keywords": [
+          "hi",
+          "hello",
+          "hey",
+          "good morning",
+          "good evening"
+        ],
+        "answer": "Hey! Ask me about my work at Zeta, my Intel internship, my projects, my skills — or how to reach me."
+      },
+      {
+        "topic": "About you",
+        "keywords": [
+          "about you",
+          "who are you",
+          "yourself",
+          "introduce",
+          "tell me about",
+          "who is ekta",
+          "background",
+          "summary"
+        ],
+        "answer": "I'm Ekta, a software engineer in Bengaluru. I'm an SDE (Backend / Full Stack) at Directi (Zeta), where I work on fintech systems like PayZapp. Before that I was a Data Engineering and MLOps intern at Intel. On the side I build AI tools and write poetry."
+      },
+      {
+        "topic": "Work at Zeta",
+        "keywords": [
+          "zeta",
+          "directi",
+          "payzapp",
+          "current",
+          "job",
+          "role",
+          "work now",
+          "company",
+          "fintech",
+          "loan",
+          "microloan"
+        ],
+        "answer": "At Directi (Zeta), since Aug 2025, I improved mobile security for PayZapp (20M+ users) with mobile-data-only authentication checks across signup and login. I also built an end-to-end Loan Application Management system with 92% test coverage, and designed a Microloan Distribution and Recovery platform with 20+ REST APIs."
+      },
+      {
+        "topic": "Intel internship",
+        "keywords": [
+          "intel",
+          "intern",
+          "internship",
+          "mlops",
+          "data engineering",
+          "etl",
+          "snowflake",
+          "databricks"
+        ],
+        "answer": "At Intel (Jul 2024 – May 2025) I was a Data Engineering and MLOps intern. I built a no-code MLOps pipeline that made ML releases 30% faster (I was recognised for it), an automated data quality framework that validated 1M+ records and cut manual effort by 70%, and ETL pipelines from 5+ sources. I also moved critical workflows from basic auth to OAuth 2.0."
+      },
+      {
+        "topic": "Projects",
+        "keywords": [
+          "project",
+          "projects",
+          "build",
+          "built",
+          "side project",
+          "github",
+          "portfolio work"
+        ],
+        "answer": "Two side projects I love: a Cold Outreach GenAI tool that writes personalised emails from a resume and a job description (LangChain, LLaMA 4, ChromaDB), and an Audio-to-Text Punctuation model — Whisper ASR plus a fine-tuned BERT — at 95.4% accuracy. Both are on my GitHub: https://github.com/ektagoel-12"
+      },
+      {
+        "topic": "Voice & punctuation",
+        "keywords": [
+          "punctuation",
+          "speech",
+          "voice",
+          "asr",
+          "whisper",
+          "bert",
+          "transcript",
+          "wispr",
+          "dictation",
+          "audio"
+        ],
+        "answer": "I built an NLP pipeline that puts punctuation into speech transcripts: Whisper ASR plus a fine-tuned NVIDIA BERT model, 95.4% accurate on 200+ hours of educational content. Yes, Wispr — I was working on your problem before I knew your name."
+      },
+      {
+        "topic": "AI work",
+        "keywords": [
+          "ai",
+          "genai",
+          "llm",
+          "langchain",
+          "llama",
+          "chromadb",
+          "machine learning",
+          "ml",
+          "nlp",
+          "pytorch"
+        ],
+        "answer": "On the AI side: a GenAI cold-outreach tool (LangChain, LLaMA 4, ChromaDB, Streamlit), a punctuation-restoration model at 95.4% accuracy (PyTorch, SparkNLP), MLOps pipelines at Intel (MLflow, Databricks), and a Kaggle rank of 46 out of 5000+."
+      },
+      {
+        "topic": "Skills",
+        "keywords": [
+          "skill",
+          "skills",
+          "stack",
+          "tech",
+          "languages",
+          "java",
+          "python",
+          "spring",
+          "vue",
+          "kotlin",
+          "android",
+          "tools",
+          "technologies"
+        ],
+        "answer": "Languages: Python, Java, C++, C, JavaScript and Kotlin. Frameworks: Spring Boot, Vue.js, PyTorch, LangChain, Streamlit, Flask. Data: Databricks, Azure Data Factory, Snowflake, PostgreSQL, MongoDB. Plus Git, Docker, CI/CD, REST APIs and the Android SDK."
+      },
+      {
+        "topic": "Education",
+        "keywords": [
+          "education",
+          "college",
+          "degree",
+          "university",
+          "jiit",
+          "jaypee",
+          "study",
+          "studied",
+          "m.tech",
+          "b.tech",
+          "graduat"
+        ],
+        "answer": "I did an Integrated B.Tech + M.Tech in Computer Science and Engineering at Jaypee Institute of Information Technology, Noida (2020 – 2025)."
+      },
+      {
+        "topic": "Achievements",
+        "keywords": [
+          "achievement",
+          "award",
+          "kaggle",
+          "libreoffice",
+          "open source",
+          "recognition",
+          "rank",
+          "contribut"
+        ],
+        "answer": "A few I'm proud of: recognised at Intel for a CI/CD pipeline that sped up ML releases by 30%, rank 46 of 5000+ in Kaggle's Car Price Prediction, and 5 merged Gerrit changes to LibreOffice with a 20% performance improvement."
+      },
+      {
+        "topic": "Experience",
+        "keywords": [
+          "experience",
+          "years",
+          "how long",
+          "career",
+          "worked"
+        ],
+        "answer": "I've been an SDE at Directi (Zeta) since Aug 2025, after a Data Engineering and MLOps internship at Intel from Jul 2024 to May 2025."
+      },
+      {
+        "topic": "Poetry",
+        "keywords": [
+          "poetry",
+          "poem",
+          "poet",
+          "write",
+          "writing",
+          "hobby",
+          "hobbies",
+          "art",
+          "creative",
+          "video",
+          "videos"
+        ],
+        "answer": "I write poetry and record videos. Code is how I solve problems; art is how I understand them."
+      },
+      {
+        "topic": "Location",
+        "keywords": [
+          "where",
+          "location",
+          "based",
+          "city",
+          "bengaluru",
+          "bangalore",
+          "relocat"
+        ],
+        "answer": "I'm based in Bengaluru — which means half my life is building things and the other half is stuck at Silk Board."
+      },
+      {
+        "topic": "Resume",
+        "keywords": [
+          "resume",
+          "cv",
+          "pdf"
+        ],
+        "answer": "Here's my plain-old resume: resume/EktaGoel_resume.pdf — or use the “Boring resume” button on the start screen."
+      },
+      {
+        "topic": "Contact me",
+        "keywords": [
+          "contact",
+          "email",
+          "mail",
+          "reach",
+          "hire",
+          "hiring",
+          "connect",
+          "linkedin",
+          "call",
+          "interview",
+          "talk",
+          "meet",
+          "available",
+          "opportunit"
+        ],
+        "answer": "I'd love to hear from you! Email me at {email} or connect on LinkedIn: {linkedin}"
+      },
+      {
+        "topic": "Thanks",
+        "keywords": [
+          "thanks",
+          "thank you",
+          "thx",
+          "great",
+          "awesome",
+          "cool",
+          "nice"
+        ],
+        "answer": "Thank you for stopping by! If you'd like to talk, I'm at {email} or {linkedin}."
+      }
+    ]
+  },
+  "captions": {
+    "chalo": "Let's go!",
+    "arreBhai": "Oh no!",
+    "honk": "[honk honk]",
+    "silkboard": "Silk Board again?!",
+    "comma": "[sparkle — comma found]"
+  }
+}

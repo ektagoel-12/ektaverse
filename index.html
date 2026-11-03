@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>EktaVerse — Ekta Goel</title>
+<meta name="description" content="A portfolio you play. Ekta Goel: software engineer, builder and poet in Bengaluru.">
+<meta name="theme-color" content="#24184a">
+<meta property="og:title" content="EktaVerse — Ekta Goel">
+<meta property="og:description" content="A portfolio you play — or watch, or read as a plain old resume.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.80.1/phaser.min.js" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="stage" aria-label="EktaVerse game">
+  <div id="game"></div>
+
+  <div id="hud" class="hidden" aria-live="off">
+    <div class="hud-l">
+      <span class="pill"><img id="chai-ico" alt=""> Chai: <b id="hud-chai">0</b></span>
+      <span class="pill"><img id="bug-ico" alt=""> Bugs fixed: <b id="hud-bugs">0</b></span>
+      <span class="pill" title="Experience — each mushroom makes Ekta grow"><img id="xp-ico" alt=""> XP: <b id="hud-xp">0/4</b></span>
+    </div>
+    <div class="hud-c" id="hud-level"></div>
+    <div class="hud-r">
+      <span id="hud-scoot" class="pill hidden">🛵 <b>10</b>s</span>
+      <button id="map-btn" class="hud-btn" aria-label="Chapter map" title="Chapter map">🗺</button>
+      <button id="cc-btn" class="hud-btn" aria-label="Captions" aria-pressed="true" title="Captions (C)">CC</button>
+      <button id="mute" aria-label="Mute (M)" aria-pressed="false">🔊</button>
+    </div>
+  </div>
+
+  <section id="title-screen">
+    <header class="brand">EKTA<span>VERSE</span></header>
+    <div class="home">
+      <div id="hello" class="hello" aria-hidden="true">
+        <div class="orbit">
+          <span style="--x:-8%;--y:22%;--d:0s">&lt;/&gt;</span>
+          <span style="--x:74%;--y:2%;--d:-1.2s">{ }</span>
+          <span style="--x:-10%;--y:46%;--d:-2.4s">Java</span>
+          <span style="--x:88%;--y:40%;--d:-3.1s">Python</span>
+          <span style="--x:-22%;--y:70%;--d:-0.7s">Spring Boot</span>
+          <span style="--x:86%;--y:70%;--d:-1.9s">Kotlin</span>
+          <span style="--x:6%;--y:4%;--d:-2.8s">git push</span>
+        </div>
+        <div class="hello-bubble">Hi! 👋</div>
+        <img id="hello-ekta" alt="">
+        <div class="hello-floor"></div>
+      </div>
+      <div class="intro">
+        <p class="kicker"><span>~/ektaverse</span> $ whoami</p>
+        <h1 class="name">Ekta Goel</h1>
+        <p class="role">Software Engineer at Zeta · Ex-Intel · JIIT Noida, B.Tech + M.Tech CSE</p>
+        <p class="term" aria-hidden="true">&gt; <span id="term-line"></span><i></i></p>
+        <p class="subtitle">Welcome to my universe — a portfolio you can play.</p>
+        <div class="menu">
+          <button id="start-btn" disabled>LOADING…</button>
+          <div class="menu-grid">
+            <button class="menu-btn" data-watch>Watch it play</button>
+            <button class="menu-btn" data-express>60-second version</button>
+            <button class="menu-btn" data-map>Chapter map</button>
+            <button class="menu-btn" data-resume>Resume (PDF)</button>
+          </div>
+        </div>
+        <nav class="links" id="title-links" aria-label="Profiles"></nav>
+      </div>
+    </div>
+    <p class="sound">← → move · Space jump · H honk · M mute · C captions</p>
+  </section>
+
+  <div id="card" class="hidden" aria-live="polite">
+    <div class="card-lvl" id="card-lvl"></div>
+    <div class="card-name" id="card-name"></div>
+    <div class="card-tag" id="card-tag"></div>
+    <div class="card-road"></div>
+  </div>
+
+  <div id="dialog" class="hidden" role="dialog" aria-live="polite" aria-labelledby="dlg-title">
+    <div class="dlg-portrait"><img id="dlg-img" alt="Ekta"></div>
+    <div class="dlg-body">
+      <div id="dlg-title"></div>
+      <div id="dlg-text"></div>
+      <div id="dlg-hint">▶ Space · tap &nbsp;·&nbsp; Esc to skip</div>
+    </div>
+  </div>
+
+  <div id="banner" class="hidden" aria-live="assertive"></div>
+  <div id="auto-pill" class="hidden" aria-live="polite"></div>
+  <div id="caption" aria-live="polite"></div>
+  <div id="toast" aria-live="polite"></div>
+
+  <div id="panel" class="hidden" role="dialog"><div class="panel-box" id="panel-box"></div></div>
+  <div id="victory" class="hidden" role="dialog"></div>
+
+  <button id="chat-fab" aria-label="Ask Ekta" aria-expanded="false"><img id="chat-fab-img" alt=""><span>Ask Ekta</span></button>
+  <aside id="chat" class="hidden" aria-label="Ask Ekta">
+    <header><img id="chat-img" alt=""><div><b>Ask Ekta</b><span>Quick answers about my work</span></div><button id="chat-close" aria-label="Close chat">✕</button></header>
+    <div id="chat-log" aria-live="polite"></div>
+    <div id="chat-chips"></div>
+    <form id="chat-form" autocomplete="off"><input id="chat-input" maxlength="300" placeholder="Ask about Zeta, Intel, projects…" aria-label="Your question"><button type="submit" aria-label="Send">➤</button></form>
+    <p class="chat-note">Answers written by Ekta. Need more? <a id="chat-mail" href="#">Email me</a> or <a id="chat-li" href="#" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </aside>
+
+  <div id="touch" class="off" aria-hidden="true">
+    <div class="t-left"><button data-k="left">◀</button><button data-k="right">▶</button></div>
+    <div class="t-right"><button data-k="honk">HONK</button><button data-k="jump">JUMP</button></div>
+  </div>
+</main>
+
+<div id="rotate"><div><div class="rot-ico">📱↻</div><p>Rotate your phone</p><small>Silk Board is wider than it is tall.</small></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.80.1/phaser.min.js" crossorigin></script>
+<script src="js/art.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/content.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

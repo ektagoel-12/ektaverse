@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# local tooling and recordings (these hold a full Chrome profile — never commit)
+.claude/
+brag-output*/
+
+# the server's automatic backup of content.json
+data/content.backup.json
+
+# secrets
+.env

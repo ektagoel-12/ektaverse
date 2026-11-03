@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>EktaVerse — Content Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #14101f; --card: #1f1931; --line: #3a2f5a; --ink: #f4eefc; --muted: #a99cc4; --acc: #ffcc1f; --ok: #2fb36b; --bad: #e2453c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 Inter, system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 20px; background: #0f0b18; border-bottom: 1px solid var(--line); }
+  h1 { font: 12px 'Press Start 2P', monospace; color: var(--acc); margin: 0; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px 80px; }
+  button, .btn { font: 600 14px Inter, sans-serif; color: var(--ink); background: #2b2050; border: 1px solid var(--line); border-radius: 6px; padding: 7px 12px; cursor: pointer; text-decoration: none; }
+  button.primary { background: var(--ok); border-color: var(--ok); color: #0b1a10; }
+  button.danger { background: transparent; color: #ff8a80; border-color: #5a2a3a; }
+  button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
+  .login { max-width: 360px; margin: 12vh auto; background: var(--card); padding: 24px; border: 1px solid var(--line); border-radius: 10px; }
+  .login h1 { margin-bottom: 16px; line-height: 1.6; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; text-transform: capitalize; }
+  input[type=text], input[type=password], textarea, select { width: 100%; font: 14px Inter, sans-serif; color: var(--ink); background: #120e1c; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+  textarea { min-height: 90px; resize: vertical; }
+  details.section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin: 14px 0; }
+  details.section > summary { cursor: pointer; padding: 14px 18px; font: 11px 'Press Start 2P', monospace; color: var(--acc); }
+  .section-body { padding: 0 18px 18px; }
+  fieldset { border: 1px solid var(--line); border-radius: 8px; margin: 12px 0; padding: 10px 14px 14px; }
+  legend { font-weight: 600; padding: 0 6px; color: var(--ink); }
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row > input { flex: 1; }
+  .hint { font-size: 12px; color: var(--muted); }
+  .fill { color: var(--acc); }
+  .status { font-size: 14px; }
+  .status.ok { color: #7cff6b; } .status.bad { color: #ff8a80; }
+  .preview { margin-top: 6px; max-height: 90px; border-radius: 4px; }
+  audio.preview { height: 32px; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  #raw { min-height: 60vh; font: 13px ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<section class="login" id="login">
+  <h1>EKTAVERSE<br>CONTENT ADMIN</h1>
+  <form id="login-form">
+    <label for="pw">Password</label>
+    <input type="password" id="pw" autocomplete="current-password" required>
+    <p class="status" id="login-status"></p>
+    <button class="primary" type="submit">Unlock</button>
+  </form>
+  <p class="hint">The password is the <code>ADMIN_PASSWORD</code> the server was started with.</p>
+</section>
+
+<div id="app" hidden>
+  <header>
+    <h1>CONTENT ADMIN</h1>
+    <div class="actions">
+      <span class="status" id="status"></span>
+      <button id="toggle-raw" type="button">Raw JSON</button>
+      <button id="download" type="button">Download JSON</button>
+      <a class="btn" href="./" target="_blank" rel="noopener">Open game ↗</a>
+      <button class="primary" id="save" type="button">Save</button>
+    </div>
+  </header>
+  <main>
+    <p class="hint">Every line the game shows lives here. Text in <span class="fill">[FILL: …]</span> is highlighted in the game until you replace it. Audio and image fields take a URL or an upload; empty audio means the game shows subtitles only.</p>
+    <div id="form"></div>
+    <textarea id="raw" hidden spellcheck="false"></textarea>
+  </main>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>
